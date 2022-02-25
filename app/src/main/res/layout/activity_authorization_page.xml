@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".activities.AuthorizationPage">
+
+    <ImageView
+        android:id="@+id/cat"
+        android:contentDescription="@string/cat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cat"
+        style="@style/cat_image" />
+
+    <EditText
+        android:id="@+id/loginEdit"
+        android:drawableStart="@drawable/custom_login"
+        android:hint="@string/login"
+        android:inputType="textEmailAddress"
+        android:importantForAutofill="no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cat"
+        style="@style/auth_page_edit" />
+
+    <EditText
+        android:id="@+id/passwordEdit"
+        android:drawableStart="@drawable/custom_lock"
+        android:hint="@string/password"
+        android:inputType="numberPassword"
+        android:importantForAutofill="no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginEdit"
+        style="@style/auth_page_edit" />
+
+    <Button
+        android:id="@+id/regBtn"
+        android:text="@string/registration"
+        app:backgroundTint="@color/feed_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEdit"
+        style="@style/auth_page_button" />
+
+    <Button
+        android:id="@+id/authBtn"
+        android:text="@string/login"
+        app:backgroundTint="@color/feed_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regBtn"
+        style="@style/auth_page_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

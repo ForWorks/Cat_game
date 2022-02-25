@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.GamePage">
+
+    <ImageView
+        android:id="@+id/catImage"
+        android:contentDescription="@string/cat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/satiety"
+        app:srcCompat="@drawable/cat"
+        style="@style/cat_image" />
+
+    <TextView
+        android:id="@+id/satiety"
+        android:layout_marginEnd="10dp"
+        android:text="@string/satiety"
+        app:layout_constraintBottom_toBottomOf="@+id/satietyCount"
+        app:layout_constraintEnd_toStartOf="@+id/satietyCount"
+        app:layout_constraintTop_toTopOf="@+id/satietyCount"
+        style="@style/game_page_text" />
+
+    <TextView
+        android:id="@+id/satietyCount"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/game_page_text" />
+
+    <Button
+        android:id="@+id/feedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/feed_button"
+        app:backgroundTint="@color/feed_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/catImage" />
+
+    <ImageView
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="5dp"
+        android:contentDescription="@string/save_button"
+        app:layout_constraintBottom_toBottomOf="@+id/satiety"
+        app:layout_constraintEnd_toStartOf="@+id/satiety"
+        app:layout_constraintTop_toTopOf="@+id/satiety"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_save" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
