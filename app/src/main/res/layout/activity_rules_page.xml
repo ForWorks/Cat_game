@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".activities.RulesPage">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="601dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="850dp">
+
+                <TextView
+                    android:id="@+id/gameRules"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/game_rules"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/feed_button"
+                    android:textSize="30sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="-16dp" />
+
+                <TextView
+                    android:id="@+id/rules1"
+                    android:text="@string/rules_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/gameRules"
+                    style="@style/rules_x" />
+
+                <TextView
+                    android:id="@+id/rules2"
+                    android:text="@string/rules_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button1"
+                    style="@style/rules_x" />
+
+                <ImageView
+                    android:id="@+id/buttonImage"
+                    android:layout_width="62dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="@string/cat"
+                    android:src="@drawable/button_image"
+                    app:layout_constraintBottom_toBottomOf="@+id/button1"
+                    app:layout_constraintStart_toEndOf="@+id/button1"
+                    app:layout_constraintTop_toTopOf="@+id/button1" />
+
+                <TextView
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/button"
+                    android:textColor="@color/feed_button"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rules1" />
+
+                <ImageView
+                    android:id="@+id/catImg"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/cat"
+                    android:src="@drawable/cat"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rules3" />
+
+                <TextView
+                    android:id="@+id/rules3"
+                    android:text="@string/rules_3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rules2"
+                    style="@style/rules_x" />
+
+                <TextView
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/button"
+                    android:textColor="@color/feed_button"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/catImg" />
+
+                <ImageView
+                    android:id="@+id/discImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:contentDescription="@string/cat"
+                    android:src="@drawable/ic_save"
+                    app:layout_constraintBottom_toBottomOf="@+id/button2"
+                    app:layout_constraintStart_toEndOf="@+id/button2"
+                    app:layout_constraintTop_toTopOf="@+id/button2" />
+
+                <TextView
+                    android:id="@+id/rules4"
+                    android:text="@string/rules_4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button2"
+                    style="@style/rules_x" />
+
+                <TextView
+                    android:id="@+id/rules5"
+                    android:text="@string/rules_5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rules4"
+                    style="@style/rules_x" />
+
+                <TextView
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/button"
+                    android:textColor="@color/feed_button"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/resultsImage" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:contentDescription="@string/cat"
+                    android:src="@drawable/ic_share"
+                    app:layout_constraintBottom_toBottomOf="@+id/button3"
+                    app:layout_constraintStart_toEndOf="@+id/button3"
+                    app:layout_constraintTop_toTopOf="@+id/button3" />
+
+                <TextView
+                    android:id="@+id/rules6"
+                    android:text="@string/rules_6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button3"
+                    style="@style/rules_x" />
+
+                <ImageView
+                    android:id="@+id/resultsImage"
+                    android:layout_width="218dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/cat"
+                    android:src="@drawable/result_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rules5" />
+
+                <TextView
+                    android:id="@+id/rules7"
+                    android:text="@string/rules_7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rules6"
+                    style="@style/rules_x" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

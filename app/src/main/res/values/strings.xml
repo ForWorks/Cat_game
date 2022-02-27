@@ -11,4 +11,17 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="registration">Registration</string>
+    <string name="group">951002</string>
+    <string name="work">Laboratory work 1</string>
+    <string name="author_name">Gatilo Vladislav</string>
+    <string name="rules">Rules</string>
+    <string name="button">Кнопка</string>
+    <string name="game_rules">Правила игры</string>
+    <string name="rules_1">Смысл игры сводится к тому, чтобы набрать как можно больше очков. Как зарабатывать очки?</string>
+    <string name="rules_2">По нажатию на эту кнопку увеличивается количество очков. Свои очки вы всегда можете увидеть в поле Satiety.</string>
+    <string name="rules_3">Каждое 15-е нажатие игрока ждет сюрприз - анимированный котейка.</string>
+    <string name="rules_4">Игрок в любой момент может сохранить результат своей игры, нажав на изображение дискеты.</string>
+    <string name="rules_5">Нажав на значок ⋮ в верхнем правом углу приложения, можно получить информацию о разработчике, а так же просмотреть свои сохраненные результаты.</string>
+    <string name="rules_6">Нажав на эту кнопку, вы можете поделиться своим результатом, выбрав любой понравившийся способ.</string>
+    <string name="rules_7">Желаем приятной игры :)</string>
 </resources>

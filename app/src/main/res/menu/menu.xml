@@ -4,6 +4,9 @@
         android:id="@+id/about"
         android:title="@string/about" />
     <item
+        android:id="@+id/rules"
+        android:title="@string/rules" />
+    <item
         android:id="@+id/result"
         android:title="@string/results" />
 </menu>

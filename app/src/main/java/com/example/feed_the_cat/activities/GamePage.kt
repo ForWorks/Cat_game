@@ -6,53 +6,32 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.recyclerview.widget.RecyclerView
 import com.example.feed_the_cat.data.DBReference
 import com.example.feed_the_cat.data.Pair
 import com.example.feed_the_cat.R
 import com.example.feed_the_cat.data.User
-import com.example.feed_the_cat.adapters.RecyclerAdapter
 import com.example.feed_the_cat.controllers.Controller
 import com.example.feed_the_cat.databinding.ActivityGamePageBinding
 import com.example.feed_the_cat.utils.Constants.Companion.DATABASE_CHILD
+import com.example.feed_the_cat.utils.Constants.Companion.SAVED
 import com.google.firebase.database.*
 
 class GamePage : AppCompatActivity() {
 
-    private lateinit var binding: ActivityGamePageBinding
-    private lateinit var controller: Controller
-    private lateinit var dialog: AlertDialog
-    private lateinit var reference: DatabaseReference
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: RecyclerAdapter
-    private lateinit var user: User
+    private val binding by lazy { ActivityGamePageBinding.inflate(layoutInflater) }
+    private val controller by lazy { Controller(this) }
+    private val aboutDialog by lazy { controller.createAboutDialog(R.layout.about_layout) }
+    private val reference by lazy { DBReference.getReference() }
+    private val user by lazy { User() }
+    private val adapter by lazy { controller.makeAdapter(user) }
+    private val resultDialog by lazy { controller.createResultDialog(adapter) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityGamePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        controller = Controller(this)
-        recyclerView = RecyclerView(this)
-        reference = DBReference.getReference()
-        dialog = controller.createAlertdialog(recyclerView)
-
-        init()
         getUser(controller.getIntentData(intent))
         setListeners()
-    }
-
-    private fun init() {
-        user = User()
-        val sendIntent = Intent(Intent.ACTION_SEND)
-        sendIntent.type = "text/plain"
-        adapter = RecyclerAdapter(user) {
-            val body = "My result in the FeedTheCat game is $it point(s)! Can you beat my record?"
-            sendIntent.putExtra(Intent.EXTRA_TEXT, body)
-            startActivity(Intent.createChooser(sendIntent, "Select"))
-        }
-        recyclerView.adapter = adapter
     }
 
     private fun setListeners() {
@@ -62,14 +41,14 @@ class GamePage : AppCompatActivity() {
         binding.feedButton.setOnClickListener {
             clicksCount++
             if(clicksCount % 15 == 0)
-                binding.catImage.startAnimation(controller.createAnimation())
+                binding.catImage.startAnimation(controller.createAnimation(R.anim.cat_animation))
             binding.satietyCount.text = clicksCount.toString()
         }
 
         binding.saveButton.setOnClickListener {
             user.list.add(Pair(clicksCount, controller.dateConvert()))
             reference.child(controller.getIntentData(intent)).child(DATABASE_CHILD).setValue(user.list)
-            Toast.makeText(this, "Saved successfully", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, SAVED, Toast.LENGTH_LONG).show()
         }
     }
 
@@ -95,11 +74,15 @@ class GamePage : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.about -> {
-                ////
+                aboutDialog.show()
+            }
+            R.id.rules -> {
+                val intent = Intent(this, RulesPage::class.java)
+                startActivity(intent)
             }
             R.id.result -> {
                 adapter.notifyDataSetChanged()
-                dialog.show()
+                resultDialog.show()
             }
         }
         return super.onOptionsItemSelected(item)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="recycler_item_text">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">20dp</item>
         <item name="android:layout_marginTop">10dp</item>
@@ -32,5 +32,21 @@
         <item name="android:drawablePadding">10dp</item>
         <item name="android:padding">10dp</item>
         <item name="android:textColor">@color/feed_button</item>
+    </style>
+    <style name="about_layout_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/feed_button</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="rules_x">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textColor">@color/feed_button</item>
+        <item name="android:textSize">16sp</item>
     </style>
 </resources>

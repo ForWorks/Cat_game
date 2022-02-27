@@ -1,11 +1,9 @@
 package com.example.feed_the_cat.data
 
-import java.io.Serializable
-
-data class User(var login: String, var list: MutableList<Pair>): Serializable {
+data class User(var login: String, var list: MutableList<Pair>) {
     constructor(): this("", mutableListOf())
 }
 
-data class Pair(var points: Int, var date: String): Serializable {
-    constructor(): this(0,"")
+data class Pair(var points: Int, var date: String) {
+    constructor(): this(0, "")
 }

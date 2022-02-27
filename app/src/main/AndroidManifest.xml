@@ -4,17 +4,22 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/cat"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/cat"
         android:supportsRtl="true"
         android:theme="@style/Theme.FeedTheCat">
+        <activity android:name=".activities.AuthorizationPage" />
+        <activity android:name=".activities.RulesPage" />
         <activity android:name=".activities.GamePage" />
-        <activity android:name=".activities.AuthorizationPage" android:exported="true">
+        <activity
+            android:name=".activities.SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
